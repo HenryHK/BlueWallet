@@ -82,8 +82,19 @@ export class BlueTextTitle extends Component {
   render() {
     return (
       <Text
-        {...this.props}
         style={{ color: BlueApp.settings.foregroundColor, textAlign: "center" }}
+        {...this.props}
+      />
+    );
+  }
+}
+
+export class BlueWarningText extends Component {
+  render() {
+    return (
+      <Text
+        style={{ color: '#f70202', textAlign: "center", fontSize: 24 }}
+        {...this.props}
       />
     );
   }
