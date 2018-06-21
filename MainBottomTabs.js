@@ -38,7 +38,7 @@ const Tabs = TabNavigator(
     tabBarOptions: {
       showLabel: false,
       activeTintColor: BlueApp.settings.foregroundColor,
-      activeBackgroundColor: '#33bdf1',
+      activeBackgroundColor: '#cc9900',
       inactiveBackgroundColor: BlueApp.settings.brandingColor,
       inactiveTintColor: BlueApp.settings.foregroundColor,
     },

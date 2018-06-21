@@ -12,9 +12,10 @@ export class AppStorage {
     this.tx_metadata = {};
     this.cachedPassword = false;
     this.settings = {
-      brandingColor: '#008dc2',
+      brandingColor: '#ffbf00',
       foregroundColor: '#ffffff',
-      buttonBackground: '#008dc2',
+      backgroudnColor: '#fff9e6',
+      buttonBackground: '#332600',
     };
   }
 
@@ -234,11 +235,11 @@ export class AppStorage {
     return txs;
   }
 
-  saveWallets() {}
+  saveWallets() { }
 
-  listTXs() {}
+  listTXs() { }
 
-  listUnconfirmed() {}
+  listUnconfirmed() { }
 
   getBalance() {
     let finalBalance = 0;

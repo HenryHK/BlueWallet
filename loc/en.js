@@ -8,8 +8,8 @@ module.exports = {
   wallets: {
     list: {
       tabBarLabel: 'Wallets',
-      app_name: 'Blue Wallet',
-      title: 'My Bitcoin Wallets',
+      app_name: 'Raichu Wallet',
+      title: 'My Wallets',
       header:
         'A wallet represents a pair of a secret (private key) and an address' +
         'you can share to receive coins.',

@@ -140,28 +140,14 @@ export default class Settings extends Component {
           >
             <Picker.Item
               color={BlueApp.settings.foregroundColor}
+              style={{ width: 100 }}
               label="English"
               value="en"
             />
             <Picker.Item
               color={BlueApp.settings.foregroundColor}
-              label="Русский"
-              value="ru"
-            />
-            <Picker.Item
-              color={BlueApp.settings.foregroundColor}
-              label="Українська"
-              value="ua"
-            />
-            <Picker.Item
-              color={BlueApp.settings.foregroundColor}
-              label="Spanish"
-              value="es"
-            />
-            <Picker.Item
-              color={BlueApp.settings.foregroundColor}
-              label="Portuguese"
-              value="pt"
+              label="简体中文"
+              value="zh_cn"
             />
           </Picker>
         </BlueCard>

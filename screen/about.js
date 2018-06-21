@@ -10,6 +10,7 @@ import {
   BlueCard,
   BlueText,
   BlueHeader,
+  BlueTextTitle,
 } from '../BlueComponents';
 import PropTypes from 'prop-types';
 /** @type {AppStorage} */
@@ -65,35 +66,13 @@ export default class About extends Component {
 
         <BlueCard>
           <ScrollView maxHeight={height - 150}>
+            <BlueTextTitle h3>
+              Raichu Wallet.
+            </BlueTextTitle>
+
             <BlueText h4>
-              BlueWallet is free and opensource Bitcoin wallet. Licensed MIT.
+              A secure cross-platform wallet for Bitcoin and Ethereum.
             </BlueText>
-
-            <BlueButton
-              icon={{ name: 'mark-github', type: 'octicon' }}
-              onPress={() => {
-                Linking.openURL('https://github.com/Overtorment/BlueWallet');
-              }}
-              title="github.com/Overtorment/BlueWallet"
-            />
-
-            <BlueButton
-              icon={{ name: 'twitter', type: 'font-awesome' }}
-              onPress={() => {
-                Linking.openURL('https://twitter.com/bluewalletio');
-              }}
-              title="Follow us on Twitter"
-            />
-
-            <BlueButton
-              icon={{ name: 'thumbsup', type: 'octicon' }}
-              onPress={() => {
-                Linking.openURL(
-                  'https://itunes.apple.com/us/app/bluewallet-bitcoin-wallet/id1376878040?l=ru&ls=1&mt=8',
-                );
-              }}
-              title="Leave us a review on Appstore"
-            />
 
             <BlueButton
               icon={{ name: 'arrow-left', type: 'octicon' }}
@@ -105,21 +84,6 @@ export default class About extends Component {
 
             <BlueSpacing20 />
 
-            <BlueText h3>Built with awesome:</BlueText>
-            <BlueSpacing20 />
-            <BlueText h4>* React Native</BlueText>
-            <BlueText h4>* Bitcoinjs-lib</BlueText>
-            <BlueText h4>* blockcypher.com API</BlueText>
-            <BlueText h4>* Nodejs</BlueText>
-            <BlueText h4>* Expo</BlueText>
-            <BlueText h4>* react-native-elements</BlueText>
-            <BlueText h4>* rn-nodeify</BlueText>
-            <BlueText h4>* bignumber.js</BlueText>
-            <BlueText h4>* https://github.com/StefanoBalocco/isaac.js</BlueText>
-            <BlueText h4>
-              * Design by https://dribbble.com/chrometaphore
-            </BlueText>
-
             <BlueButton
               onPress={() => {
                 this.props.navigation.navigate('Selftest');
@@ -128,9 +92,9 @@ export default class About extends Component {
             />
           </ScrollView>
         </BlueCard>
-      </SafeBlueArea>
+      </SafeBlueArea >
     );
-  }
+  } 318428
 }
 
 About.propTypes = {

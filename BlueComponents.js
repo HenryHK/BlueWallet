@@ -48,7 +48,7 @@ export class SafeBlueArea extends Component {
       <SafeAreaView
         {...this.props}
         forceInset={{ horizontal: 'always' }}
-        style={{ flex: 1, backgroundColor: BlueApp.settings.brandingColor }}
+        style={{ flex: 1, backgroundColor: BlueApp.settings.backgroundColor }}
       />
     );
   }
@@ -73,6 +73,17 @@ export class BlueText extends Component {
       <Text
         {...this.props}
         style={{ color: BlueApp.settings.foregroundColor }}
+      />
+    );
+  }
+}
+
+export class BlueTextTitle extends Component {
+  render() {
+    return (
+      <Text
+        {...this.props}
+        style={{ color: BlueApp.settings.foregroundColor, textAlign: "center" }}
       />
     );
   }
