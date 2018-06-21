@@ -36,7 +36,7 @@ describe('unit - signer', function () {
           1: 666 // output index and it's value in satoshi
         }
       }
-      let newhex = signer.createRBFSegwitTransaction(txhex, {'1Pb81K1xJnMjUfFgKUbva6gr1HCHXxHVnr': '3BDsBDxDimYgNZzsqszNZobqQq3yeUoJf2'}, 0.0001, 'KyWpryAKPiXXbipxWhtprZjSLVjp22sxbVnJssq2TCNQxs1SuMeD', dummyUtxodata)
+      let newhex = signer.createRBFSegwitTransaction(txhex, { '1Pb81K1xJnMjUfFgKUbva6gr1HCHXxHVnr': '3BDsBDxDimYgNZzsqszNZobqQq3yeUoJf2' }, 0.0001, 'KyWpryAKPiXXbipxWhtprZjSLVjp22sxbVnJssq2TCNQxs1SuMeD', dummyUtxodata)
       let oldTx = bitcoinjs.Transaction.fromHex(txhex)
       let newTx = bitcoinjs.Transaction.fromHex(newhex)
       // just checking old tx...
@@ -54,7 +54,7 @@ describe('unit - signer', function () {
 
     it('should return valid tx hex for segwit transactions with multiple inputs', function (done) {
       let signer = require('../../models/signer')
-      let utxos = [ { 'txid': '4e2a536aaf6b0b8a4f439d0343436cd321b8bac9840a24d13b8eed484a257b0b', 'vout': 0, 'address': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'account': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'scriptPubKey': 'a914e0d81f03546ab8f29392b488ec62ab355ee7c57387', 'amount': 0.00090000, 'confirmations': 67, 'spendable': false, 'solvable': false, 'safe': true }, { 'txid': '09e1b78d4ecd95dd4c7dbc840a2619da6d02caa345a63b2733f3972666462fbd', 'vout': 0, 'address': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'account': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'scriptPubKey': 'a914e0d81f03546ab8f29392b488ec62ab355ee7c57387', 'amount': 0.00190000, 'confirmations': 142, 'spendable': false, 'solvable': false, 'safe': true } ]
+      let utxos = [{ 'txid': '4e2a536aaf6b0b8a4f439d0343436cd321b8bac9840a24d13b8eed484a257b0b', 'vout': 0, 'address': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'account': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'scriptPubKey': 'a914e0d81f03546ab8f29392b488ec62ab355ee7c57387', 'amount': 0.00090000, 'confirmations': 67, 'spendable': false, 'solvable': false, 'safe': true }, { 'txid': '09e1b78d4ecd95dd4c7dbc840a2619da6d02caa345a63b2733f3972666462fbd', 'vout': 0, 'address': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'account': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'scriptPubKey': 'a914e0d81f03546ab8f29392b488ec62ab355ee7c57387', 'amount': 0.00190000, 'confirmations': 142, 'spendable': false, 'solvable': false, 'safe': true }]
       let tx = signer.createSegwitTransaction(utxos, '1Pb81K1xJnMjUfFgKUbva6gr1HCHXxHVnr', 0.0028, 0.0002, 'L4iRvejJG9gRhKVc3rZm5haoyd4EuCi77G91DnXRrvNDqiXktkXh')
       assert.equal(tx, '010000000001020b7b254a48ed8e3bd1240a84c9bab821d36c4343039d434f8a0b6baf6a532a4e00000000171600141e16a923b1a9e8d0c2a044030608a6aa13f97e9affffffffbd2f46662697f333273ba645a3ca026dda19260a84bc7d4cdd95cd4e8db7e10900000000171600141e16a923b1a9e8d0c2a044030608a6aa13f97e9affffffff01a0f70300000000001976a914f7c6c1f9f6142107ed293c8fbf85fbc49eb5f1b988ac02483045022100b3e001b880a7a18294640165cc40c777669534803cee7206c8d3f03531bb315502204642a4569576a2e9e77342c7a9aaa508a21248b7720fe0f9e6d76713951c133001210314389c888e9669ae05739819fc7c43d7a50fdeabd2a8951f9607c8cad394fd4b02473044022078bd4f47178ce13c4fbf77c5ce78c80ac10251aa053c68c8febb21ce228f844e02207b02bdd754fbc2df9f62ea98e7dbd6c43e760b8f78c7c00b43512a06b498adb501210314389c888e9669ae05739819fc7c43d7a50fdeabd2a8951f9607c8cad394fd4b00000000')
       done()
@@ -62,7 +62,7 @@ describe('unit - signer', function () {
 
     it('should return valid tx hex for segwit transactions with change address', function (done) {
       let signer = require('../../models/signer')
-      let utxos = [ { 'txid': '160559030484800a77f9b38717bb0217e87bfeb47b92e2e5bad6316ad9d8d360', 'vout': 1, 'address': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'account': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'scriptPubKey': 'a914e0d81f03546ab8f29392b488ec62ab355ee7c57387', 'amount': 0.00400000, 'confirmations': 271, 'spendable': false, 'solvable': false, 'safe': true } ]
+      let utxos = [{ 'txid': '160559030484800a77f9b38717bb0217e87bfeb47b92e2e5bad6316ad9d8d360', 'vout': 1, 'address': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'account': '3NBtBset4qPD8DZeLw4QbFi6SNjNL8hg7x', 'scriptPubKey': 'a914e0d81f03546ab8f29392b488ec62ab355ee7c57387', 'amount': 0.00400000, 'confirmations': 271, 'spendable': false, 'solvable': false, 'safe': true }]
       let tx = signer.createSegwitTransaction(utxos, '1Pb81K1xJnMjUfFgKUbva6gr1HCHXxHVnr', 0.002, 0.0001, 'L4iRvejJG9gRhKVc3rZm5haoyd4EuCi77G91DnXRrvNDqiXktkXh')
       assert.equal(tx, '0100000000010160d3d8d96a31d6bae5e2927bb4fe7be81702bb1787b3f9770a8084040359051601000000171600141e16a923b1a9e8d0c2a044030608a6aa13f97e9affffffff0230e60200000000001976a914f7c6c1f9f6142107ed293c8fbf85fbc49eb5f1b988ac400d03000000000017a914e0d81f03546ab8f29392b488ec62ab355ee7c573870247304402202c962e14ae6abd45dc9613d2f088ad487e805670548e244deb25d762b310a60002204f12c7f9b8da3567b39906ff6c46b27ce087e7ae91bbe34fb1cdee1b994b9d3001210314389c888e9669ae05739819fc7c43d7a50fdeabd2a8951f9607c8cad394fd4b00000000')
       done()
@@ -123,7 +123,8 @@ describe('unit - signer', function () {
         confirmations: 108,
         spendable: false,
         solvable: false,
-        safe: true }]
+        safe: true
+      }]
       let toAddr = '1GX36PGBUrF8XahZEGQqHqnJGW2vCZteoB'
       let amount = 0.001
       let fee = 0.0001

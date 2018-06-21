@@ -40,7 +40,7 @@
     "asyncstorage-down": "^3.1.1",
     "bignumber.js": "^5.0.0",
     "bip21": "^2.0.1",
-    "bitcoinjs-lib": "^3.3.2",
+    "bitcoinjs-lib": "git://github.com/HenryHK/bitcoinjs-lib#react-native-compatible",
     "buffer": "^4.9.1",
     "crypto-js": "^3.1.9-1",
     "eslint-config-prettier": "^2.9.0",
