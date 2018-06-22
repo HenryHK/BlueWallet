@@ -236,11 +236,11 @@ export class AppStorage {
     return txs;
   }
 
-  saveWallets() { }
+  saveWallets() {}
 
-  listTXs() { }
+  listTXs() {}
 
-  listUnconfirmed() { }
+  listUnconfirmed() {}
 
   getBalance() {
     let finalBalance = 0;

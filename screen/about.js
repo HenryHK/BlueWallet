@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Linking, Dimensions } from 'react-native';
+import { ScrollView, Dimensions } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Icon } from 'react-native-elements';
 import {
@@ -66,9 +66,7 @@ export default class About extends Component {
 
         <BlueCard>
           <ScrollView maxHeight={height - 150}>
-            <BlueTextTitle h3>
-              Raichu Wallet.
-            </BlueTextTitle>
+            <BlueTextTitle h3>Raichu Wallet.</BlueTextTitle>
 
             <BlueText h4>
               A secure cross-platform wallet for Bitcoin and Ethereum.
@@ -92,9 +90,10 @@ export default class About extends Component {
             />
           </ScrollView>
         </BlueCard>
-      </SafeBlueArea >
+      </SafeBlueArea>
     );
-  } 318428
+  }
+  318428;
 }
 
 About.propTypes = {

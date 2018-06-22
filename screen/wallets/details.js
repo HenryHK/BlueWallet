@@ -8,7 +8,6 @@ import {
   BlueButton,
   SafeBlueArea,
   BlueCard,
-  BlueText,
   BlueFormLabel,
   BlueFormInputAddress,
   BlueWarningText,
@@ -121,7 +120,9 @@ export default class WalletDetails extends Component {
           if (this.state.confirmDelete) {
             return (
               <View style={{ alignItems: 'center' }}>
-                <BlueWarningText>{loc.wallets.details.are_you_sure}</BlueWarningText>
+                <BlueWarningText>
+                  {loc.wallets.details.are_you_sure}
+                </BlueWarningText>
                 <View style={{ flex: 0, flexDirection: 'row' }}>
                   <View style={{ flex: 0.5 }}>
                     <BlueButton

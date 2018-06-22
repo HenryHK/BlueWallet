@@ -18,10 +18,7 @@ let strings;
     let locale = await Util.getCurrentLocaleAsync();
     if (locale) {
       console.log('current locale:', locale);
-      if (
-        locale === 'en' ||
-        locale === 'zh_cn'
-      ) {
+      if (locale === 'en' || locale === 'zh_cn') {
         strings.setLanguage(locale);
       } else {
         strings.setLanguage('en');
@@ -32,7 +29,7 @@ let strings;
 
 strings = new LocalizedStrings({
   en: require('./en.js'),
-  zh_cn: require('./zh_cn.js')
+  zh_cn: require('./zh_cn.js'),
 });
 
 strings.saveLanguage = lang => AsyncStorage.setItem(AppStorage.LANG, lang);
