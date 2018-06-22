@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListView, Dimensions } from 'react-native';
+import { ListView, Dimensions, Platform } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   BlueLoading,
@@ -19,13 +19,25 @@ let ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 export default class ReceiveList extends Component {
   static navigationOptions = {
     tabBarLabel: loc.receive.list.tabBarLabel,
-    tabBarIcon: ({ tintColor, focused }) => (
-      <Ionicons
-        name={focused ? 'ios-cash' : 'ios-cash-outline'}
-        size={26}
-        style={{ color: tintColor }}
-      />
-    ),
+    tabBarIcon: ({ tintColor, focused }) => {
+      if (Platform.OS === 'ios') {
+        return (
+          <Ionicons
+            name={focused ? 'ios-cash' : 'ios-cash-outline'}
+            size={26}
+            style={{ color: tintColor }}
+          />
+        )
+      } else {
+        return (
+          <Ionicons
+            name={focused ? 'md-cash' : 'ios-cash-outline'}
+            size={26}
+            style={{ color: tintColor }}
+          />
+        )
+      }
+    }
   };
 
   constructor(props) {

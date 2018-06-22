@@ -22,14 +22,14 @@
     "slug": "bluewallet",
     "githubUrl": "https://github.com/Overtorment/BlueWallet",
     "orientation": "portrait",
-    "primaryColor": "#00aced",
+    "primaryColor": "#ffbf00",
     "icon": "img/icon.png",
     "notification": {
       "icon": "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon.png",
       "color": "#000000"
     },
     "splash": {
-      "backgroundColor": "#00aced"
+      "backgroundColor": "#ffbf00"
     }
   }
 }

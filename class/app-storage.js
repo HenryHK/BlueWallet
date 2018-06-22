@@ -17,6 +17,7 @@ export class AppStorage {
       backgroudnColor: '#fff9e6',
       buttonBackground: '#332600',
       warningColor: '#f70202',
+      raichuColor: '#cc9900',
     };
   }
 
@@ -236,11 +237,11 @@ export class AppStorage {
     return txs;
   }
 
-  saveWallets() {}
+  saveWallets() { }
 
-  listTXs() {}
+  listTXs() { }
 
-  listUnconfirmed() {}
+  listUnconfirmed() { }
 
   getBalance() {
     let finalBalance = 0;

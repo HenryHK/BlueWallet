@@ -1,6 +1,6 @@
 /* global alert */
 import React, { Component } from 'react';
-import { ScrollView, View, Picker } from 'react-native';
+import { ScrollView, View, Picker, Platform } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Icon, FormValidationMessage } from 'react-native-elements';
 import {
@@ -21,13 +21,25 @@ let loc = require('../loc');
 export default class Settings extends Component {
   static navigationOptions = {
     tabBarLabel: loc.settings.tabBarLabel,
-    tabBarIcon: ({ tintColor, focused }) => (
-      <Ionicons
-        name={focused ? 'ios-settings' : 'ios-settings-outline'}
-        size={26}
-        style={{ color: tintColor }}
-      />
-    ),
+    tabBarIcon: ({ tintColor, focused }) => {
+      if (Platform.OS === 'ios') {
+        return (
+          <Ionicons
+            name={focused ? 'ios-settings' : 'ios-settings-outline'}
+            size={26}
+            style={{ color: tintColor }}
+          />
+        )
+      } else {
+        return (
+          <Ionicons
+            name={focused ? 'md-settings' : 'ios-settings-outline'}
+            size={26}
+            style={{ color: tintColor }}
+          />
+        )
+      }
+    }
   };
 
   constructor(props) {
@@ -129,27 +141,31 @@ export default class Settings extends Component {
             />
           </ScrollView>
 
-          <Picker
-            selectedValue={this.state.language}
-            onValueChange={(itemValue, itemIndex) => {
-              console.log('setLanguage', itemValue);
-              loc.setLanguage(itemValue);
-              loc.saveLanguage(itemValue);
-              return this.setState({ language: itemValue });
-            }}
-          >
-            <Picker.Item
-              color={BlueApp.settings.foregroundColor}
-              style={{ width: 100 }}
-              label="English"
-              value="en"
-            />
-            <Picker.Item
-              color={BlueApp.settings.foregroundColor}
-              label="简体中文"
-              value="zh_cn"
-            />
-          </Picker>
+          <View
+            alignItems="center">
+            <Picker
+              style={{ width: 150 }}
+              mode="dropdown"
+              selectedValue={this.state.language}
+              onValueChange={(itemValue, itemIndex) => {
+                console.log('setLanguage', itemValue);
+                loc.setLanguage(itemValue);
+                loc.saveLanguage(itemValue);
+                return this.setState({ language: itemValue });
+              }}
+            >
+              <Picker.Item
+                color={BlueApp.settings.raichuColor}
+                label="English"
+                value="en"
+              />
+              <Picker.Item
+                color={BlueApp.settings.raichuColor}
+                label="简体中文"
+                value="zh_cn"
+              />
+            </Picker>
+          </View>
         </BlueCard>
       </SafeBlueArea>
     );

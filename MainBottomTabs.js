@@ -37,10 +37,14 @@ const Tabs = TabNavigator(
     animationEnabled: true,
     tabBarOptions: {
       showLabel: false,
+      showIcon: true,
       activeTintColor: BlueApp.settings.foregroundColor,
-      activeBackgroundColor: '#cc9900',
+      activeBackgroundColor: BlueApp.settings.raichuColor,
       inactiveBackgroundColor: BlueApp.settings.brandingColor,
       inactiveTintColor: BlueApp.settings.foregroundColor,
+      style: {
+        backgroundColor: BlueApp.settings.brandingColor
+      }
     },
   },
 );

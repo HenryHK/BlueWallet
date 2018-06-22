@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListView, Dimensions } from 'react-native';
+import { ListView, Dimensions, Platform } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Header, Icon } from 'react-native-elements';
 import {
@@ -22,13 +22,25 @@ let ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 export default class TransactionsList extends Component {
   static navigationOptions = {
     tabBarLabel: loc.transactions.list.tabBarLabel,
-    tabBarIcon: ({ tintColor, focused }) => (
-      <Ionicons
-        name={focused ? 'ios-list-box' : 'ios-list-box-outline'}
-        size={26}
-        style={{ color: tintColor }}
-      />
-    ),
+    tabBarIcon: ({ tintColor, focused }) => {
+      if (Platform.OS === 'ios') {
+        return (
+          <Ionicons
+            name={focused ? 'ios-list-box' : 'ios-list-box-outline'}
+            size={26}
+            style={{ color: tintColor }}
+          />
+        )
+      } else {
+        return (
+          <Ionicons
+            name={focused ? 'md-list-box' : 'ios-list-box-outline'}
+            size={26}
+            style={{ color: tintColor }}
+          />
+        )
+      }
+    }
   };
 
   constructor(props) {
@@ -74,9 +86,9 @@ export default class TransactionsList extends Component {
       {
         isLoading: true,
       },
-      async function() {
+      async function () {
         let that = this;
-        setTimeout(async function() {
+        setTimeout(async function () {
           // more responsive
           let noErr = true;
           try {
