@@ -1,6 +1,6 @@
 {
   "expo": {
-    "sdkVersion": "23.0.0",
+    "sdkVersion": "26.0.0",
     "version": "1.4.2",
     "privacy": "public",
     "platforms": [
@@ -17,10 +17,9 @@
         "ITSAppUsesNonExemptEncryption": false
       }
     },
-    "name": "Blue Wallet",
-    "description": "Bitcoin wallet app. Alpha version (iOS only)",
-    "slug": "bluewallet",
-    "githubUrl": "https://github.com/Overtorment/BlueWallet",
+    "name": "Raichu Wallet",
+    "description": "Bitcoin and Ethereum Wallet",
+    "slug": "raichuwallet",
     "orientation": "portrait",
     "primaryColor": "#ffbf00",
     "icon": "img/icon.png",
